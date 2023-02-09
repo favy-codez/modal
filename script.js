@@ -3,16 +3,18 @@
 const modal = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.close-modal');
 const overlay = document.querySelector('.overlay');
-const openModal = document.querySelectorAll('.show-modal');
+const openModalBtn = document.querySelectorAll('.show-modal');
 
-for (let i = 0; i < openModal.length; i++) {
-    // add event listener on the 3 buttons
-   openModal[i].addEventListener('click', function(){
+const openModal = function(){
     console.log('btn clicked');
     // so the hidden class is set to display-none, we want to use classlist to remove it
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
-    });
+}
+
+for (let i = 0; i < openModalBtn.length; i++) {
+    // add event listener on the 3 buttons
+   openModalBtn[i].addEventListener('click', openModal);
 };
 
 // closeModalBtn.addEventListener('click', function(){
@@ -27,6 +29,7 @@ for (let i = 0; i < openModal.length; i++) {
 
 // the code above works but using the DRY principle
 
+// close modal
 const closeModal = function(){
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
