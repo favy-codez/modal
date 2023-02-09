@@ -6,7 +6,6 @@ const overlay = document.querySelector('.overlay');
 const openModalBtn = document.querySelectorAll('.show-modal');
 
 const openModal = function(){
-    console.log('btn clicked');
     // so the hidden class is set to display-none, we want to use classlist to remove it
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
