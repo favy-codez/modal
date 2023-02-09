@@ -1,7 +1,7 @@
 'use script';
 
 const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.close-modal');
+const closeModalBtn = document.querySelector('.close-modal');
 const overlay = document.querySelector('.overlay');
 const openModal = document.querySelectorAll('.show-modal');
 
@@ -13,4 +13,23 @@ for (let i = 0; i < openModal.length; i++) {
     modal.classList.remove('hidden');
     overlay.classList.remove('hidden');
     });
-}
+};
+
+closeModalBtn.addEventListener('click', function(){
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
+
+overlay.addEventListener('click', function(){
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+});
+
+// the code above works but using the DRY principle
+
+const closeModal = function(){
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+};
+closeModalBtn.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
