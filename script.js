@@ -48,3 +48,8 @@ document.addEventListener('keydown', function(e){
         }
     }
 })
+
+// refactoring code
+// if (e.key === 'Escape' && !modal.classList.contains('hidden')){
+//     closeModal();
+// }
